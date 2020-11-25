@@ -1,4 +1,4 @@
-import express from 'express';
+/*import express from 'express';
 const router=express.Router();
 // Getting all
 router.get('/', async (req, res) => {
@@ -69,4 +69,4 @@ router.get('/', async (req, res) => {
     res.subscriber = subscriber
     next()
   }
-export default router;
+export default router;*/
