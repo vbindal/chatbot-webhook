@@ -109,6 +109,56 @@ function customPayload(agent){
 }
 
 // agent.add(new ffment.Payload(agent.UNSPECIFIED,payloadData,{sendAsMessage:true,rawPayload:true}))
+function StudentActivityTechSpardha(agent) {
+  agent.add(new Card({
+    title: 'Techspardha',
+    imageUrl: 'https://miro.medium.com/max/3650/1*BxZvFaVtpqGHR6RkhoqgMQ.jpeg',
+    text: `Techspardha is a national level annual techno-managerial students’ festival of National Institute of Technology, Kurukshetra. It started in 1995 as "Technospect" (later changed to Literati). The year 2013 marked the Golden Jubilee of NIT Kurukshetra, same year it was renamed as Techspardha. Etymologically, the word ‘Techspardha’ is composed of two words, ‘Tech’ in English is a contraction of technology and ‘Spardha’ in Hindi means competition.`,
+    buttonText: 'Techspardha FB Page',
+    buttonUrl: 'https://m.facebook.com/techspardha.nitkkr/'
+    }))
+agent.add(new LinkOutSuggestion({
+    name: 'More about TechSpardha',
+    url: 'https://nitkkr.ac.in/sub_courses.php?id=106&id3=82',
+  }))
+    agent.add(new Suggestion(""));
+    agent.add(new Suggestion("Library"));
+};
+intentMap.set('StudentActivity-Techspardha', StudentActivityTechSpardha)
+
+
+function StudentActivityConfluence(agent) {
+  agent.add('Confluence, popularly known as conflu, is the annual cultural festival of the National Institute of Technology Kurukshetra. It is a four-day long event held towards the end of February every year. It draws a footfall of more than 15,000 students from more than 60 colleges from across the country. Started in 1991 by a bunch of enthusiastic NITians, now in its 21st edition, has snowballed to become the largest festival of its kind in North India.')
+
+      agent.add(new Suggestion("TechSpardha"));
+      agent.add(new Suggestion("Library"));
+  };
+  intentMap.set('StudentActivity-Confluence', StudentActivityConfluence)
+
+
+function TechnicalSocities(agent) {
+  agent.add(new List({
+    title: 'Technical Socities',
+    items: {
+        title: 'EMR(Robotics)',
+        title: 'TechnoByte',
+        title: 'SAE(AutoMotive)',
+        title: 'ElectroReck',
+        title: 'MechSoc',
+        title: 'MicroBus',
+        title: 'InfraStructure',
+      },
+    },
+  ))
+  agent.add(new LinkOutSuggestion({
+      name: 'Important Contacts',
+      url: 'https://nitkkr.ac.in/sub_courses.php?id=210&id3=84',
+    }))
+      agent.add(new Suggestion("Techspardha"));
+      agent.add(new Suggestion("Confluence"));
+  };
+intentMap.set('StudentActivity-TechnicalSocities', TechnicalSocities)
+
 
 
 
