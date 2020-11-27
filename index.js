@@ -67,10 +67,6 @@ app.post("/",json(),(req,res)=>{
 agent.requestSource = agent.ACTIONS_ON_GOOGLE;
 
 
-
-
-
-
 function testFunction(agent){
     agent.add("This response is sent from webhook to test it");
 }
@@ -110,12 +106,32 @@ function customPayload(agent){
 
 // agent.add(new ffment.Payload(agent.UNSPECIFIED,payloadData,{sendAsMessage:true,rawPayload:true}))
 
+function aboutyourself(agent){
+  agent.add("I am a ChatBot for the official website for National Institute of Technology, Kurukshetra. Here to help you know more about this institution! ")
+}
 
+function postgrad(agent) {
+  agent.add("There are three post graduation courses ");
+  agent.add(new Suggestion("MBA eligibility"));
+  agent.add(new Suggestion("MCA eligibility"));
+  agent.add(new Suggestion("M Tech eligibility"));
+
+}
+function MBAEligibility(agent) {
+  agent.add("To get admission in MBA, CAT/MAT/CMAT/GMAT scores are must ");
+  agent.add(new Suggestion("MBA eligibility"));
+  agent.add(new Suggestion("MCA eligibility"));
+  agent.add(new Suggestion("M Tech eligibility"));
+
+}
 
 var intentMap=new Map();
 intentMap.set("test",testFunction)
 intentMap.set("custom payload",customPayload)
 intentMap.set('richmessage', richMessageButtonHandler)
+intentMap.set('AboutYourself',aboutyourself)
+intentMap.set('PostGradEligibility',postgrad)
+intentMap.set('MBAdeptEligibility',MBAEligibility)
 agent.handleRequest(intentMap);
 })
 
